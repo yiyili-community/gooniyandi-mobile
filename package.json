@@ -15,7 +15,7 @@
   "devDependencies": {
     "bower": "^1.8.8",
     "cordova": "^10.0.0",
-    "cordova-android": "^9.0.0",
+    "cordova-android": "^9.1.0",
     "cordova-ios": "^6.1.1",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-dialogs": "^2.0.2",
