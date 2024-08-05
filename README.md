@@ -6,8 +6,9 @@ The **Jila** app is built using the [Middleman](http://middlemanapp.com) static 
 
 ## Prerequisites
 
-- Ruby
-- Node.js
+- Ruby (use [rbenv](https://github.com/rbenv/rbenv?tab=readme-ov-file#installation) for utilise .ruby-version file.)
+- java 11 (For building the app - use [jenv](https://www.jenv.be/) if necessary)
+- Node.js (18.11 - use [nvm](https://github.com/nvm-sh/nvm) if necessary)
 - Xcode (for iOS apps)
 - Android SDK (for Android apps)
 
@@ -41,7 +42,7 @@ To view the app in the browser, run `bundle exec middleman` to start a server at
 3. Export the following variables.
 ```
 export ANDROID_SDK=$HOME/Library/Android/sdk
-export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/build-tools:$PATH
 export PATH="$ANDROID_SDK/platform-tools:$PATH"
 ```
 
