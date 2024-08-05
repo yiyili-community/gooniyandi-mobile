@@ -54,7 +54,8 @@ export PATH="$ANDROID_SDK/platform-tools:$PATH"
 For detailed instructions, see: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#project-configuration
 
 #### Releasing a signed Android apk
-1. Run `keytool -genkey -v -keystore [keystore-name].keystore -alias [key-alias] -keyalg RSA -keysize 2048 -validity 10000` to generate a keystore.
+1. Run `keytool -genkey -v -keystore [keystore-name].keystore -alias [key-alias] -keyalg RSA -keysize 2048 -validity 10000` to generate a keystore. 
+   1. If you need to bump the version, just change the version attribute in the [config.xml](source/config.xml). For android, the versionCode will be computed by the build process - see [Setting the version Code](https://cordova.apache.org/docs/en/12.x/guide/platforms/android/index.html#setting-the-version-code) for more info. 
 
 2. Create a `build.json` file in the root directory with the following:
 ```
