@@ -16,26 +16,28 @@
     "bower": "^1.8.8",
     "cordova": "^12.0.0",
     "cordova-android": "^13.0.0",
-    "cordova-ios": "^7.0.1",
+    "cordova-ios": "^7.1.1",
     "cordova-plugin-device": "^3.0.0",
     "cordova-plugin-dialogs": "^2.0.2",
-    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-file": "^8.1.0",
     "cordova-plugin-inappbrowser": "^6.0.0",
-    "cordova-plugin-media": "^5.0.3",
+    "cordova-plugin-media": "^7.0.0",
     "cordova-plugin-statusbar": "^2.4.3",
     "ios-sim": "^9.0.0",
     "plugman": "^3.0.1"
   },
   "cordova": {
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-device": {},
       "cordova-plugin-dialogs": {},
-      "cordova-plugin-file": {},
+      "cordova-plugin-file": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
+      },
       "cordova-plugin-media": {
         "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
       },
