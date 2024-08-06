@@ -21,6 +21,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
     <platform name="android">
         <!--
