@@ -30,7 +30,7 @@ $action_button_width: 45px;
 
     &.search {
       right: $action_margin;
-      $search_scale: 70%;
+      $search_scale: 1920%;
       img {
         width: $search_scale;
         height: $search_scale;
@@ -77,6 +77,9 @@ $action_button_width: 45px;
     font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', 'sans-serif';
     overflow: auto;
 
+    .search-input {
+      height: 50px;
+    }
     .entries {
       padding-bottom: 100px;
     }
