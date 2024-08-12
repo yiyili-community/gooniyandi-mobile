@@ -49,6 +49,7 @@ $action_button_width: 45px;
   }
 
   .top-bar {
+    height: 50px;
     >.title {
       @include center-in-parent;
     }
@@ -94,7 +95,6 @@ $action_button_width: 45px;
       left: 0;
       width: $action_button_width;
       height: 100%;
-      background-image: url(../img/logo.png);
       background-position: center;
       background-size: 70% 70%;
       background-repeat: no-repeat;
