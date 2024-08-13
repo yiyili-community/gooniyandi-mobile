@@ -43,7 +43,7 @@ GEM
     eventmachine (1.0.7)
     execjs (2.5.2)
     ffi (1.15.0)
-    haml (4.0.6)
+    haml (4.0.7)
       tilt
     hike (1.2.3)
     hitimes (1.2.2)
@@ -148,7 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
-  haml
+  haml (~> 4.0.7)
   middleman (~> 3.3.3)
   middleman-angular-templates!
   middleman-autoprefixer

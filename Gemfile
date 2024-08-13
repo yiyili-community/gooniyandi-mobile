@@ -15,7 +15,7 @@ gem 'middleman-jasmine'
 
 gem 'middleman-autoprefixer'
 
-gem 'haml'
+gem 'haml', "~> 4.0.7"
 gem 'sass'
 gem 'coffee-script'
 
