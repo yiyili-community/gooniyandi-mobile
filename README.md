@@ -7,13 +7,14 @@ The **Jila** app is built using the [Middleman](http://middlemanapp.com) static 
 ## Prerequisites
 
 - Ruby (use [rbenv](https://github.com/rbenv/rbenv?tab=readme-ov-file#installation) for utilise .ruby-version file.)
-- java 11 (For building the app - use [jenv](https://www.jenv.be/) if necessary)
+- java 17 (For building the app - use [jenv](https://www.jenv.be/) if necessary)
 - Node.js (18.11 - use [nvm](https://github.com/nvm-sh/nvm) if necessary)
 - Xcode (for iOS apps)
 - Android SDK (for Android apps)
 
 ## Installation
 1. Run `bundle install` to install the required Ruby gems.
+   2. To avoid potential permissions issues, it's advised to run `bundle config --local path .vendor/bundle` before installing.
 
 2. Run `yarn` to install Cordova dependencies. If you see the following error: `Current working directory is not a Cordova-based project.`, run `bundle exec rake build_site` to generate a `www` folder which will be consumed by Cordova.
 
