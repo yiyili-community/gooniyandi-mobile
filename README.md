@@ -6,13 +6,15 @@ The **Jila** app is built using the [Middleman](http://middlemanapp.com) static 
 
 ## Prerequisites
 
-- Ruby
-- Node.js
+- Ruby (use [rbenv](https://github.com/rbenv/rbenv?tab=readme-ov-file#installation) for utilise .ruby-version file.)
+- java 17 (For building the app - use [jenv](https://www.jenv.be/) if necessary)
+- Node.js (18.11 - use [nvm](https://github.com/nvm-sh/nvm) if necessary)
 - Xcode (for iOS apps)
 - Android SDK (for Android apps)
 
 ## Installation
 1. Run `bundle install` to install the required Ruby gems.
+   2. To avoid potential permissions issues, it's advised to run `bundle config --local path .vendor/bundle` before installing.
 
 2. Run `yarn` to install Cordova dependencies. If you see the following error: `Current working directory is not a Cordova-based project.`, run `bundle exec rake build_site` to generate a `www` folder which will be consumed by Cordova.
 
@@ -41,7 +43,7 @@ To view the app in the browser, run `bundle exec middleman` to start a server at
 3. Export the following variables.
 ```
 export ANDROID_SDK=$HOME/Library/Android/sdk
-export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/build-tools:$PATH
 export PATH="$ANDROID_SDK/platform-tools:$PATH"
 ```
 
@@ -53,7 +55,8 @@ export PATH="$ANDROID_SDK/platform-tools:$PATH"
 For detailed instructions, see: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#project-configuration
 
 #### Releasing a signed Android apk
-1. Run `keytool -genkey -v -keystore [keystore-name].keystore -alias [key-alias] -keyalg RSA -keysize 2048 -validity 10000` to generate a keystore.
+1. Run `keytool -genkey -v -keystore [keystore-name].keystore -alias [key-alias] -keyalg RSA -keysize 2048 -validity 10000` to generate a keystore. 
+   1. If you need to bump the version, just change the version attribute in the [config.xml](source/config.xml). For android, the versionCode will be computed by the build process - see [Setting the version Code](https://cordova.apache.org/docs/en/12.x/guide/platforms/android/index.html#setting-the-version-code) for more info. 
 
 2. Create a `build.json` file in the root directory with the following:
 ```

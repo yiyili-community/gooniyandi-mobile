@@ -1,6 +1,6 @@
 .list-entry.row
   .column.small-4.large-4.thumbnail-column
-    .thumbnail{style: 'background-image: url({{entry.images.thumbnail}})'}
+    .thumbnail{style: 'background-image: url({{entry.images.thumbnail}})', ng: { if: 'entry && entry.images && entry.images.thumbnail'}}
   .column.small-8.large-8
     %div{ng: {class: "{'entry-word': true, 'proper-noun': entry.word_type === 'proper noun'}"}} {{ entry.entry_word }}
     .translation {{entry.meaning}}

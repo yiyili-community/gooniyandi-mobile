@@ -1,4 +1,4 @@
-$action_button_width: 45px;
+$action_button_width: 50px;
 
 .navigation {
   a {
@@ -30,7 +30,7 @@ $action_button_width: 45px;
 
     &.search {
       right: $action_margin;
-      $search_scale: 70%;
+      $search_scale: 1920%;
       img {
         width: $search_scale;
         height: $search_scale;
@@ -49,6 +49,7 @@ $action_button_width: 45px;
   }
 
   .top-bar {
+    height: 50px;
     >.title {
       @include center-in-parent;
     }
@@ -77,6 +78,10 @@ $action_button_width: 45px;
     font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', 'sans-serif';
     overflow: auto;
 
+    .search-input {
+      height: 50px;
+      font-weight: normal;
+    }
     .entries {
       padding-bottom: 100px;
     }
@@ -91,7 +96,6 @@ $action_button_width: 45px;
       left: 0;
       width: $action_button_width;
       height: 100%;
-      background-image: url(../img/logo.png);
       background-position: center;
       background-size: 70% 70%;
       background-repeat: no-repeat;

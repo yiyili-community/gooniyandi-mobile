@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:damrbaby/middleman-angular-templates.git
+  remote: https://github.com/damrbaby/middleman-angular-templates.git
   revision: 92993b1ede985cf34036f5efb3e43cc4200ba843
   specs:
     middleman-angular-templates (0.0.1)
@@ -43,7 +43,7 @@ GEM
     eventmachine (1.0.7)
     execjs (2.5.2)
     ffi (1.15.0)
-    haml (4.0.6)
+    haml (4.0.7)
       tilt
     hike (1.2.3)
     hitimes (1.2.2)
@@ -148,7 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
-  haml
+  haml (~> 4.0.7)
   middleman (~> 3.3.3)
   middleman-angular-templates!
   middleman-autoprefixer

@@ -2,7 +2,7 @@
   .row
     .columns.small-12.large-5.small-centered
       .row
-        .image{style: 'background-image: url({{entry.images.normal}})'}
+        .image{style: 'background-image: url({{entry.images.normal}})', ng: {if: 'entry.images && entry.images.normal'}}
         .row.entry-row
           %div{ng: {class: "{'entry-word': true, 'proper-noun': entry.word_type === 'proper noun'}"}}
             %span {{ entry.entry_word }}
@@ -15,7 +15,7 @@
           .definition
             .translation {{ entry.meaning }}
             .word-type {{ entry.word_type }}
-          .play-button{ng: {if: 'entry.audio !== null'}}
+          .play-button{ng: {if: 'entry.audio !== null && entry.audio !== undefined'}}
             %a{href: 'javascript:void(0)', ng: {click: 'listen()'}}
               .play-word.fa
                 &#xf144;
