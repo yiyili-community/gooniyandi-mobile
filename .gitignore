@@ -37,3 +37,4 @@ node_modules
 build.json
 .idea
 .tool-versions
+yarn.lock
