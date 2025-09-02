@@ -8,57 +8,67 @@ The **Jila** app is built using the [Middleman](http://middlemanapp.com) static 
 
 - Ruby (use [rbenv](https://github.com/rbenv/rbenv?tab=readme-ov-file#installation) for utilise .ruby-version file.)
 - java 17 (For building the app - use [jenv](https://www.jenv.be/) if necessary)
-- Node.js (18.11 - use [nvm](https://github.com/nvm-sh/nvm) if necessary)
+- Node.js (22.18 - use [nvm](https://github.com/nvm-sh/nvm) if necessary)
 - Xcode (for iOS apps)
 - Android SDK (for Android apps)
 
 ## Installation
+
 1. Run `bundle install` to install the required Ruby gems.
-   2. To avoid potential permissions issues, it's advised to run `bundle config --local path .vendor/bundle` before installing.
+   \*\* To avoid potential permissions issues, it's advised to run `bundle config --local path .vendor/bundle` before installing.
 
-2. Run `yarn` to install Cordova dependencies. If you see the following error: `Current working directory is not a Cordova-based project.`, run `bundle exec rake build_site` to generate a `www` folder which will be consumed by Cordova.
+2. Run `npm install` to install Cordova dependencies. If you see the following error: `Current working directory is not a Cordova-based project.`, run `bundle exec rake build_site` to generate a `www` folder which will be consumed by Cordova.
 
-3. Run `yarn setup` to install Bower dependencies.
+3. Run `npm run setup` to install Bower dependencies.
 
-4. Run `bundle exec rake build_site` to update the `www` folder with Bower dependencies installed.
+4. Run `npm run prepare` to install Cordova plugins.
 
-5. Run `yarn prepare` to install Cordova plugins.
+5. Run `bundle exec rake build_site` to update the `www` folder with Bower dependencies installed.
 
 ## Getting Started
 
 ### Development
+
 To view the app in the browser, run `bundle exec middleman` to start a server at 'http://localhost:4567'.
 
 #### Running app in iOS simulator (Xcode required)
+
 1. If you've made any changes to the static site, run `bundle exec rake build_site` to update the `www` folder.
 
-2. run `yarn run:ios`.
+2. run `npm run run:ios`.
 
 #### Running app in Android simulator (Android studio, JDK 8, and Gradle 6 required)
+
 <sup>For more information, see: https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#requirements-and-support</sup>
+
 1. If you've made any changes to the static site, run `bundle exec rake build_site` to update the `www` folder.
 
 2. Set `JAVA_HOME` environment variable to the location of your JDK installation
 
 3. Export the following variables.
+
 ```
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/build-tools:$PATH
 export PATH="$ANDROID_SDK/platform-tools:$PATH"
 ```
 
-3. Run `yarn run:android`.
+3. Run `npm run run:android`.
 
 ### Release
 
 #### Releasing an iOS app
+
 For detailed instructions, see: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#project-configuration
 
 #### Releasing a signed Android apk
-1. Run `keytool -genkey -v -keystore [keystore-name].keystore -alias [key-alias] -keyalg RSA -keysize 2048 -validity 10000` to generate a keystore. 
-   1. If you need to bump the version, just change the version attribute in the [config.xml](source/config.xml). For android, the versionCode will be computed by the build process - see [Setting the version Code](https://cordova.apache.org/docs/en/12.x/guide/platforms/android/index.html#setting-the-version-code) for more info. 
+
+1. Run `keytool -genkey -v -keystore [keystore-name].keystore -alias [key-alias] -keyalg RSA -keysize 2048 -validity 10000` to generate a keystore.
+
+   1. If you need to bump the version, just change the version attribute in the [config.xml](source/config.xml). For android, the versionCode will be computed by the build process - see [Setting the version Code](https://cordova.apache.org/docs/en/12.x/guide/platforms/android/index.html#setting-the-version-code) for more info.
 
 2. Create a `build.json` file in the root directory with the following:
+
 ```
 {
   "android": {
@@ -73,12 +83,13 @@ For detailed instructions, see: https://cordova.apache.org/docs/en/latest/guide/
 }
 ```
 
-3. Run `yarn release:android`.
-
+3. Run `npm run release:android`.
 
 ### Testing
+
 The **Jila** framework uses [Jasmine](http://jasmine.github.io/) for unit testing. Once your server is running it can be accessed at 'http://localhost:4567/jasmine'.
 
 ## Customisation
+
 There are a few ways that Jila is configurable out of the box, these are located in the file **configuration.coffee**. The most important of which is probably the **BACKEND_URL** which specifies where the administration console is hosted.
 The app can be re-styled without any changes to the functionality. If you do make changes, **please consider submitting a pull request so the community can benefit**.
