@@ -21,9 +21,9 @@ The **Jila** app is built using the [Middleman](http://middlemanapp.com) static 
 
 3. Run `npm run setup` to install Bower dependencies.
 
-4. Run `npm run prepare` to install Cordova plugins.
+4. Run `bundle exec rake build_site` to update the `www` folder with Bower dependencies installed.
 
-5. Run `bundle exec rake build_site` to update the `www` folder with Bower dependencies installed.
+5. Run `npm run prepare` to install Cordova plugins.
 
 ## Getting Started
 
